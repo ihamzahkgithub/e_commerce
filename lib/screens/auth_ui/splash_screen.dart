@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Add a delay of three seconds and navigate to the next screen
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(const WelcomeScreen());
+      Get.to(WelcomeScreen());
     });
   }
 

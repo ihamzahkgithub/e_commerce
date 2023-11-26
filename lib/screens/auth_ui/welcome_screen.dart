@@ -1,17 +1,16 @@
-import 'package:e_commerce/screens/auth_ui/sign_in_screen.dart';
 import 'package:e_commerce/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+import '../../controllers/google_sign_in_controller.dart';
 
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
+class WelcomeScreen extends StatelessWidget {
+  WelcomeScreen({super.key});
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+  final GoogleSignInController _googleSignInController =
+      Get.put(GoogleSignInController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +59,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               ElevatedButton.icon(
                 onPressed: () {
-                  Get.to(SignInScreen());
+                  _googleSignInController.signInWithGoogle();
                 },
                 icon: const Icon(Icons.login_outlined),
                 label: const Text('S i g n In With G o o g l e'),
