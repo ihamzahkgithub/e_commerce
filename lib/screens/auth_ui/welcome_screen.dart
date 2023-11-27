@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../controllers/google_sign_in_controller.dart';
+import 'sign_in_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   WelcomeScreen({super.key});
@@ -35,7 +36,7 @@ class WelcomeScreen extends StatelessWidget {
                       child: Lottie.asset('assets/shopping_splash.json')),
                 ),
               ),
-              Divider(),
+              const Divider(),
               SizedBox(
                 height: Get.height / 10,
               ),
@@ -50,7 +51,9 @@ class WelcomeScreen extends StatelessWidget {
                 height: Get.height / 8,
               ),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Get.offAll(() => const SignInScreen());
+                },
                 icon: const Icon(Icons.email),
                 label: const Text('S i g n In With E m a i l'),
               ),
