@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-
 import 'welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -43,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const Text(
               "Powered By Hamza ",
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
             ),
           ],
         ),

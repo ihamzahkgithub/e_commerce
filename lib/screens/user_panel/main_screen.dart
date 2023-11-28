@@ -1,8 +1,8 @@
 import 'package:e_commerce/screens/auth_ui/welcome_screen.dart';
 import 'package:e_commerce/utils/app_constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class MainScreen extends StatefulWidget {
@@ -38,6 +38,8 @@ class _MainScreenState extends State<MainScreen> {
               onTap: () async {
                 //logic for logout
                 GoogleSignIn googleSignIn = GoogleSignIn();
+                FirebaseAuth _auth = FirebaseAuth.instance;
+                await _auth.signOut();
 
                 await googleSignIn.signOut();
                 Get.offAll(() => WelcomeScreen());

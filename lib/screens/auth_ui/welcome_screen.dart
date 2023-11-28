@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
               const Text(
                 'Welcome Shopping ',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -52,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               ElevatedButton.icon(
                 onPressed: () {
-                  Get.offAll(() => const SignInScreen());
+                  Get.to(() => const SignInScreen());
                 },
                 icon: const Icon(Icons.email),
                 label: const Text('S i g n In With E m a i l'),
