@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, non_constant_identifier_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/screens/auth_ui/sign_in_screen.dart';
 import 'package:e_commerce/utils/app_constants.dart';
@@ -26,7 +28,7 @@ class ForgetPasswordController extends GetxController {
         colorText: AppConstant.appTextColor,
       );
       //will move to sign in screen when click on forget password btn
-      Get.offAll(() => SignInScreen());
+      Get.offAll(() => const SignInScreen());
       //easyloading end
       EasyLoading.dismiss();
 

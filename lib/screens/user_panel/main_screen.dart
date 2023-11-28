@@ -44,10 +44,7 @@ class _MainScreenState extends State<MainScreen> {
                 await googleSignIn.signOut();
                 Get.offAll(() => WelcomeScreen());
               },
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.logout),
-              ),
+              child: Icon(Icons.logout),
             )
           ],
         ),

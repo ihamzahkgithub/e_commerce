@@ -57,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
               const SizedBox(),
-              Container(
+              SizedBox(
                 width: 200.0,
                 height: 200.0,
                 child: Lottie.asset('assets/shopping_splash.json'),
@@ -227,7 +227,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     children: [
                       Text(
                         'Dont have an Account? ',
-                        style: TextStyle(color: AppConstant.appTextColor),
                       ),
                       Text(
                         'Sign Up',

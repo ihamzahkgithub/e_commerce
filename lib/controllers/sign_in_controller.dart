@@ -1,3 +1,5 @@
+// ignore_for_file: body_might_complete_normally_nullable, unused_field
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/utils/app_constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
