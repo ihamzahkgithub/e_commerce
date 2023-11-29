@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 300.0,
             ),
             const Text(
-              "Powered By Hamza ",
+              "Powered By Hamza",
               style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
             ),
           ],
