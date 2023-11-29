@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:e_commerce/screens/auth_ui/welcome_screen.dart';
 import 'package:e_commerce/utils/app_constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -44,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                 await googleSignIn.signOut();
                 Get.offAll(() => WelcomeScreen());
               },
-              child: Icon(Icons.logout),
+              child: const Icon(Icons.logout),
             )
           ],
         ),

@@ -5,24 +5,24 @@ import 'package:get/get.dart';
 
 import '../utils/app_constants.dart';
 
-class GetDeviceTokenController extends GetxController {
-  String? deviceToken;
+class EmailGetDeviceTokenController extends GetxController {
+  String? emailDeviceToken;
 
   @override
   void onInit() {
     super.onInit();
 
-    getDeviceToken();
+    emailGetDeviceToken();
   }
 
-  Future<void> getDeviceToken() async {
+  Future<void> emailGetDeviceToken() async {
     try {
       String? token = await FirebaseMessaging.instance.getToken();
 
       if (token != null) {
-        deviceToken = token;
+        emailDeviceToken = token;
 
-        print("token : $deviceToken");
+        print("token : $emailDeviceToken");
 
         update();
       }

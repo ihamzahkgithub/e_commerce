@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, unnecessary_null_comparison
 
 import 'package:e_commerce/controllers/sign_in_controller.dart';
 import 'package:e_commerce/screens/auth_ui/sign_up_screen.dart';
@@ -10,6 +10,8 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../controllers/get_user_data_controller.dart';
+import '../admin_panel/admin_main_screen.dart';
 import 'forget_password_screen.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -22,6 +24,9 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
 //import the SignInController from the sign_in_controller.dart
   final SignInController signInController = Get.put(SignInController());
+
+  final GetUserDataController getUserDataController =
+      Get.put(GetUserDataController());
 //create the textediting cotroller for textfields
   TextEditingController userEmail = TextEditingController();
   TextEditingController userPassword = TextEditingController();
@@ -154,19 +159,34 @@ class _SignInScreenState extends State<SignInScreen> {
                     UserCredential? userCredential =
                         await signInController.signInMethod(email, password);
 
+                    var userData = await getUserDataController
+                        .getUserData(userCredential!.user!.uid);
+
                     //now if user credentials is not equal to null
                     if (userCredential != null) {
                       if (userCredential.user!.emailVerified) {
-                        Get.snackbar(
-                          'Success',
-                          'Successfully Login ! ',
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: AppConstant.appSecendoryColor,
-                          colorText: AppConstant.appTextColor,
-                        );
+                        //logic for Admin Panel navigation
+                        if (userData[0]['isAdmin'] == true) {
+                          Get.snackbar(
+                            'Success Admin login',
+                            'Successfully Login ! ',
+                            snackPosition: SnackPosition.BOTTOM,
+                            backgroundColor: AppConstant.appSecendoryColor,
+                            colorText: AppConstant.appTextColor,
+                          );
+                          Get.offAll(() => AdminMainScreen());
+                        } else {
+                          Get.offAll(() => MainScreen());
+                          Get.snackbar(
+                            'Successfully User login',
+                            'Successfully Login ! ',
+                            snackPosition: SnackPosition.BOTTOM,
+                            backgroundColor: AppConstant.appSecendoryColor,
+                            colorText: AppConstant.appTextColor,
+                          );
+                        }
 
                         //if everything okay from user side so they will moved to a screen below
-                        Get.offAll(() => MainScreen());
 
                         //will add the logic in future for admin to navigates admin to admin dashboard and user to user
                       } else {
