@@ -1,11 +1,7 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
-
-import 'package:e_commerce/screens/auth_ui/welcome_screen.dart';
-import 'package:e_commerce/utils/app_constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import '../../utils/app_constants.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,38 +15,16 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: AppConstant.appTextColor),
         elevation: 20.0,
-        backgroundColor: AppConstant.appMainColor,
+        backgroundColor: Colors.redAccent,
         title: Text(
           AppConstant.appMainName,
           style: const TextStyle(color: AppConstant.appTextColor),
         ),
         centerTitle: true,
       ),
-      body: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            AppConstant.appMainName,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, color: AppConstant.appTextColor),
-          ),
-          centerTitle: true,
-          actions: [
-            GestureDetector(
-              onTap: () async {
-                //logic for logout
-                GoogleSignIn googleSignIn = GoogleSignIn();
-                FirebaseAuth _auth = FirebaseAuth.instance;
-                await _auth.signOut();
-
-                await googleSignIn.signOut();
-                Get.offAll(() => WelcomeScreen());
-              },
-              child: const Icon(Icons.logout),
-            )
-          ],
-        ),
-      ),
+      drawer: const DrawerWidget(),
     );
   }
 }

@@ -64,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const CircularProgressIndicator(),
             const SizedBox(
-              height: 300.0,
+              height: 320.0,
             ),
             const Text(
               "Powered By Hamza",
