@@ -1,10 +1,10 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
-import 'package:e_commerce/screens/auth_ui/sign_in_screen.dart';
 import 'package:e_commerce/widgets/banner_widget.dart';
 import 'package:e_commerce/widgets/heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils/app_constants.dart';
+import '../../widgets/category_widget.dart';
 import '../../widgets/custom_drawer_widget.dart';
 
 class MainScreen extends StatefulWidget {
@@ -53,12 +53,9 @@ class _MainScreenState extends State<MainScreen> {
               buttonText: 'See More >',
             ),
 
-            HeadingWidget(
-              headingTitle: 'SubCategories',
-              headingSubtile: 'Acc to your Budget',
-              onTap: () {},
-              buttonText: 'See More >',
-            ),
+//category Widget
+
+            const CategoriesWidget(),
           ],
         ),
       ),
