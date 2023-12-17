@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 class CategoriesModel {
+  //class
   final String categoryId;
   final String categoryImg;
   final String categoryName;
@@ -8,6 +9,7 @@ class CategoriesModel {
   final dynamic updatedAt;
 
   CategoriesModel({
+    //constructor
     required this.categoryId,
     required this.categoryImg,
     required this.categoryName,

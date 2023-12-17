@@ -1,11 +1,16 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
+import 'package:e_commerce/screens/user_panel/all_categories_screen.dart';
 import 'package:e_commerce/widgets/banner_widget.dart';
 import 'package:e_commerce/widgets/heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils/app_constants.dart';
+import '../../widgets/all_product_widget.dart';
 import '../../widgets/category_widget.dart';
 import '../../widgets/custom_drawer_widget.dart';
+import '../../widgets/flash_sale_widget.dart';
+import 'all_flash_sale_product.dart';
+import 'all_product_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -49,13 +54,39 @@ class _MainScreenState extends State<MainScreen> {
               //required parameters filled
               headingTitle: 'Categories',
               headingSubtile: 'As Per You Budget',
-              onTap: () {},
+              onTap: () => Get.to(() => const AllCategoriesScreen()),
               buttonText: 'See More >',
             ),
 
 //category Widget
 
             const CategoriesWidget(),
+
+            HeadingWidget(
+              //required parameters filled
+              headingTitle: 'Flash Sale',
+              headingSubtile: 'As Per You Budget',
+              onTap: () => Get.to(() => const AllFlashSaleProductScreen()),
+              buttonText: 'See More >',
+            ),
+
+            //FlashSaleWidget.dart
+
+            const FlashSaleWidget(),
+
+            //all Products
+
+            HeadingWidget(
+              //required parameters filled
+              headingTitle: 'All Products ',
+              headingSubtile: 'As Per You Budget',
+              onTap: () => Get.to(() => const AllProductsScreen()),
+              buttonText: 'See More >',
+            ),
+
+            //all products widgets.dart
+
+            const AllProductsWidget(),
           ],
         ),
       ),

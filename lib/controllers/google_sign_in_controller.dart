@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/controllers/get_device_token_controller.dart';
 import 'package:e_commerce/models/user_model.dart';

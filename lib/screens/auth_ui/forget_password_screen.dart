@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:e_commerce/utils/app_constants.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +45,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       height: 5.0,
                     )
                   : const Text(
-                      'Reset Your to Password',
+                      'Reset Your  Password',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,

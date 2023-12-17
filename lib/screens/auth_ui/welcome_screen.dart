@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace
+
 import 'package:e_commerce/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

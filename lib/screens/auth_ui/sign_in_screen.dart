@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors, unnecessary_null_comparison
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, unnecessary_null_comparison, avoid_unnecessary_containers
 
 import 'package:e_commerce/controllers/sign_in_controller.dart';
 import 'package:e_commerce/screens/auth_ui/sign_up_screen.dart';
