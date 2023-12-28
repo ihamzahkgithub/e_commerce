@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:image_card/image_card.dart';
 
 import '../models/category_model.dart';
+import '../screens/user_panel/single_category_product_screen.dart';
 
 class CategoriesWidget extends StatelessWidget {
   const CategoriesWidget({super.key});
@@ -54,9 +55,8 @@ class CategoriesWidget extends StatelessWidget {
                 return Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        //navigtaion to screen
-                      },
+                      onTap: () => Get.to(() => AllSingleCategoryProductsScreen(
+                          categoryId: categoriesModel.categoryId)),
                       child: Padding(
                         padding: EdgeInsets.all(5.0),
                         child: Container(

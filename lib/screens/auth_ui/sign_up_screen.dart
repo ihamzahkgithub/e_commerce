@@ -198,6 +198,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     phone.isEmpty ||
                     city.isEmpty ||
                     password.isEmpty) {
+                  // MyGetXSnackbar(title: "errror", message: " errorr happend",);
                   Get.snackbar(
                     "Error",
                     "Pls Enter all details ",

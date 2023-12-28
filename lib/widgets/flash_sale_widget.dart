@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:image_card/image_card.dart';
 import '../models/products_models.dart';
+import '../screens/user_panel/product_detail_screen.dart';
 
 class FlashSaleWidget extends StatelessWidget {
   const FlashSaleWidget({super.key});
@@ -72,7 +73,8 @@ class FlashSaleWidget extends StatelessWidget {
                 return Row(
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () => Get.to(() =>
+                          ProductDetailsScreen(productModel: productModel)),
                       child: Padding(
                         padding: EdgeInsets.all(5.0),
                         child: Container(

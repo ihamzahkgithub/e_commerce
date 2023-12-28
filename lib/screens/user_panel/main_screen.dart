@@ -84,6 +84,7 @@ class _MainScreenState extends State<MainScreen> {
               buttonText: 'See More >',
             ),
 
+            const CategoriesWidget(),
             //all products widgets.dart
 
             const AllProductsWidget(),
